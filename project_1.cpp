@@ -12,6 +12,8 @@ int main() {
 
     srand((unsigned int)time(NULL));
 
+    cout << "프로젝트 1. 배스킨라빈스 31 게임" << endl;
+
     for (int i = 0; i < 31; i++) {
         s[i] = i+1;
     }
