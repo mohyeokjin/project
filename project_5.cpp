@@ -52,7 +52,6 @@ int main() {
                 }
             }
         }
-
         count++;
 
         if(strike == 3) {
@@ -63,6 +62,7 @@ int main() {
             cout << "Strike : " << strike << "    " << "Ball : " << ball << "    " << count << "회" << endl;
             strike = 0;
             ball = 0;
+            continue;
         }
 
 
