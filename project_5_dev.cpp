@@ -87,13 +87,13 @@ int main() {
             cout << endl << "첫 번째 플레이어 : 베팅할 금액을 입력해주세요. (베팅 가능 금액 : " << game.getbet_1() << ") : ";
             cin >> x;
             if(x > game.getbet_1()) {
-                cout << "베팅 가능 금액을 초과하였습니다. 다시 입력해주세요. " << endl;
+                cout << endl << "베팅 가능 금액을 초과하였습니다. 다시 입력해주세요. : ";
                 cin >> x;
             }
             cout << endl << "두 번째 플레이어 : 베팅할 금액을 입력해주세요. (베팅 가능 금액 : " << game.getbet_2() << ") : ";
             cin >> y;
             if(y > game.getbet_2()) {
-                cout << "베팅 가능 금액을 초과하였습니다. 다시 입력해주세요. " << endl;
+                cout << endl << "베팅 가능 금액을 초과하였습니다. 다시 입력해주세요. : ";
                 cin >> y;
             }
             
@@ -106,6 +106,10 @@ int main() {
                 game.setbet_1(game.getwin_1(game.getbet_1(), x, y));
                 game.setbet_2(game.getlose_2(game.getbet_2(), x, y));
                 game.Result();
+                strike = 0;
+                strike_1 = 0;
+                ball = 0;
+                ball_1 = 0;
             }
             else if(score_1 < score_2) {
                 cout << endl << "두 번째 플레이어 승리!" << endl << endl;
@@ -114,16 +118,30 @@ int main() {
                 game.setbet_1(game.getlose_1(game.getbet_1(), x, y));
                 game.setbet_2(game.getwin_2(game.getbet_2(), x, y));
                 game.Result();
+                strike = 0;
+                strike_1 = 0;
+                ball = 0;
+                ball_1 = 0;
             }
             else if(score_1 == score_2) {
                 cout << endl << "무승부입니다!" << endl << endl;
                 cout << "첫 번째 플레이어 - strike : " << strike << "      " << "ball : " << ball << endl;
                 cout << "두 번째 플레이어 - strike : " << strike_1 << "      " << "ball : " << ball_1 << endl;
                 game.Result();
+                strike = 0;
+                strike_1 = 0;
+                ball = 0;
+                ball_1 = 0;
             }
         }
         else { // 베팅 거절 시 그대로 진행
+            cout << "첫 번째 플레이어 - strike : " << strike << "      " << "ball : " << ball << endl;
+            cout << "두 번째 플레이어 - strike : " << strike_1 << "      " << "ball : " << ball_1 << endl;
             game.Result();
+            strike = 0;
+            strike_1 = 0;
+            ball = 0;
+            ball_1 = 0;
             continue;
         }
 
@@ -161,13 +179,6 @@ int main() {
                 break;
             }
         }
-        // 점수 초기화
-        strike = 0;
-        ball = 0;
-        strike_1 = 0;
-        ball_1 = 0;
-        score_1 = 0;
-        score_2 = 0;
         continue;
     }
 

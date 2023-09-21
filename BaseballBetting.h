@@ -43,6 +43,7 @@ class BaseballBetting {
     }
 
     void Score(int x, int y) {
+        cout << endl;
         cout << "================== 점수 ===================" << endl;
         cout << "첫 번째 플레이어 : " << x << endl;
         cout << "두 번째 플레이어 : " << y << endl;
